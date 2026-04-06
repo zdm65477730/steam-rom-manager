@@ -1,116 +1,116 @@
 # 常见问题
 
-Read this if you're still having trouble with configuration. For most examples the following will be used unless specified otherwise: Read this if you're still having trouble with configuration. For most examples the following will be used unless specified otherwise: For most examples the following will be used unless specified otherwise: 除非另有说明，否则大多数情况下将使用以下内容： 除非另有说明，否则大多数情况下将使用以下内容： 除非另有说明，否则大多数情况下将使用以下内容： 除非另有说明，否则大多数情况下将使用以下内容： 除非另有说明，否则大多数情况下将使用以下内容： 除非另有说明，否则大多数情况下将使用以下内容： 除非另有说明，否则大多数情况下将使用以下内容： 除非另有说明，否则大多数情况下将使用以下内容： 除非另有说明，否则大多数情况下将使用以下内容：
+如果您在配置方面仍有困难，请阅读本节。对于大多数示例，除非特别说明，否则将使用以下内容：
 
-|              |                                            |
-| ------------ | ------------------------------------------ |
-| **ROM 目录** | `C:/ROMs`                                  |
-| **File1**    | `C:/ROMs/Kingdom Hearts/game.iso`          |
-| **File2**    | `C:/ROMs/Kingdom Hearts II/rom.iso`        |
-| **File3**    | `C:/ROMs/dir1/dir2/dir3/Metroid [USA].nes` |
-| **File4**    | `C:/ROMs/dir1/dir2/dir3/save.sav`          |
-| **File5**    | `C:/ROMs/dir1/dir2/Dragon Quest IV.NES`    |
-| **File6**    | `C:/ROMs/dir1/dir2/save.sav`               |
+|                    |                                            |
+| ------------------ | ------------------------------------------ |
+| **ROMs目录** | `C:/ROMs`                                  |
+| **文件1**          | `C:/ROMs/Kingdom Hearts/game.iso`          |
+| **文件2**          | `C:/ROMs/Kingdom Hearts II/rom.iso`        |
+| **文件3**          | `C:/ROMs/dir1/dir2/dir3/Metroid [USA].nes` |
+| **文件4**          | `C:/ROMs/dir1/dir2/dir3/save.sav`          |
+| **文件5**          | `C:/ROMs/dir1/dir2/Dragon Quest IV.NES`    |
+| **文件6**          | `C:/ROMs/dir1/dir2/save.sav`               |
 
-## 那么，我该如何设置用户的全局变量？
+## 那么，我该如何设置用户的glob？
 
-首先，让我们分析 **File1**。 它的完整路径是 `C:/ROMs/Kingdom Hearts/game.iso`。 由于我们的 **ROMs目录** 位于 `C:/ROMs`，因此我们可以从 **File1** 的路径中删除它。
+首先，让我们分析**文件1**。它的完整路径是`C:/ROMs/Kingdom Hearts/game.iso`。由于我们的**ROMs目录**是`C:/ROMs`，我们可以从**文件1**的路径中删除它。
 
-我们最终得到了 `Kingdom Hearts/game.iso`。 对我们来说，`Kingdom Hearts` 是标题很明显，但解析器比你还要笨 -- 你必须用 `${title}` 替换 `Kingdom Hearts` 以指定包含标题的路径部分。
+最后得到`Kingdom Hearts/game.iso`。对我们来说很明显`Kingdom Hearts`是标题，但是解析器比你笨——你必须通过将`Kingdom Hearts`替换为`${title}`来指定包含标题的路径部分。
 
-再次强调，我们得到了 `${title}/game.iso`，但是我们也需要 **File2**，因为它适用于同一个模拟器。 Again, we end up with `${title}/game.iso`, but we also want **File2**, because it is for the same emulator. **File1** is `game.iso` and **File2** is `rom.iso`. What now? **File1** is `game.iso` and **File2** is `rom.iso`. What now? **File1** is `game.iso` and **File2** is `rom.iso`. 现在怎么办？ 现在怎么办？
+再次，我们得到`${title}/game.iso`，但我们还想获得**文件2**，因为它适用于同一个模拟器。**文件1**是`game.iso`，**文件2**是`rom.iso`。现在怎么办？
 
-还记得通配符吗？ 它们允许我们丢弃那些并不重要的信息。 在这种情况下，我们不关心它是`游戏`还是`ROM`，我们希望两者都匹配。 那就是为什么我们用 `*` 替换它们。 这是 **File1** 和 **File2** 的最终结果：
+还记得通配符吗？它们允许我们忽略并不真正重要的信息。在这种情况下，我们不在乎它是`game`还是`rom`，我们希望两者都能匹配。这就是为什么我们将它们替换为`*`。这是**文件1**和**文件2**的最终glob：
 
 ```
 ${title}/*.iso
 ```
 
-使用类似的逻辑，我们可以为 **File3** 生成全局变量：
+使用类似的逻辑，我们可以为**文件3**生成glob：
 
 ```
 */*/*/${title}.nes
 ```
 
-## 如何处理多层目录？
+## 如何处理多级目录？
 
-This time we want **File3** and **File5** (both have different extensions, read next section on what to do about it as for now we will use `*` to ignore extension). Notice that **File3** has `3` subdirectories while **File5** has `2`. What now? Notice that **File3** has `3` subdirectories while **File5** has `2`. What now? 请注意，**File3**有`3`个子目录，而**File5**有`2`个。 请注意，**File3** 有 `3` 个子目录，而 **File5** 有 `2` 个。 现在怎么办？
+这次我们想要**文件3**和**文件5**（两者有不同的扩展名，关于如何处理这个问题，请阅读下一节，目前我们将使用`*`来忽略扩展名）。请注意，**文件3**有`3`个子目录，而**文件5**有`2`个。现在怎么办？
 
-现在我们可以使用 globstar，就是这样！
+现在我们可以使用globstar，就这样！
 
 ```
 **/${title}.*
 ```
 
-它真的那么简单吗？ Is it really that simple? Is it really that simple? **NO!** Globstar will have some impact in parser's performance if there are many subdirectories with thousands of files each. Globstar will make sure that parser check every file it can find. User once reported that parsing took ~10 minutes when he used globstars everywhere. Globstar will make sure that parser check every file it can find. User once reported that parsing took ~10 minutes when he used globstars everywhere. Globstar 会确保解析器检查它能找到的每个文件。 Globstar 会确保解析器检查它能找到的每个文件。 用户曾经报告过解析需要约10分钟的时间来使用 globstar。
+真的这么简单吗？**不！** 如果有很多子目录，每个子目录都有数千个文件，globstar会对解析器性能产生一些影响。globstar将确保解析器检查它可以找到的每个文件。曾有用户报告说，当他在各处使用globstar时，解析花了大约10分钟。
 
-建议的解决方案是使用花括号集合。 A recommended solution is to use braced sets. A recommended solution is to use braced sets. They can make multiple globs out of `1` glob. If we write a glob like this: If we write a glob like this: 如果我们像这样写一个全局通配符： 如果我们像这样写一个全局通配符：
+推荐的解决方案是使用大括号集合。它们可以用`1`个glob生成多个globs。如果我们这样写一个glob：
 
 ```
 {*,*/*}/*/${title}.*
 ```
 
-我们将获得 `2` 个 globs：
+我们将得到`2`个globs：
 
 ```
 */*/${title}.*
 */*/*/${title}.*
 ```
 
-这 `2` 个 globs 都符合我们的文件，**File3** 和 **File5**。
+这`2`个globs都满足我们的文件，**文件3**和**文件5**。
 
 ## 如何限制文件扩展名？
 
-假设我们使用前面例子中的 glob：
+假设我们使用前面示例中的glob：
 
 ```
 {*,*/*}/*/${title}.*
 ```
 
-我们最终会得到4个文件：**File3**、**File4**、**File5** 和 **File6**。 现在，我们不需要 **File4** 和 **File6**。 通常我们可以将 glob 设置为：
+我们会得到4个文件：**文件3**、**文件4**、**文件5**和**文件6**。现在，我们不需要**文件4**和**文件6**。通常我们可以将glob设置为：
 
 ```
 {*,*/*}/*/${title}.nes
 ```
 
-但是最终我们只会得到 **File3**，因为 `nes` 不等于 `NES` -- 解析器区分大小写。 使用扩展的 glob 匹配器，有两种方法可以解决这个问题。
+但那样我们只会得到**文件3**，因为`nes`不等于`NES`——解析器是区分大小写的。有两种方法使用扩展glob匹配器来解决这个问题。
 
-### 排除 `sav` 扩展名
+### 排除`sav`扩展名
 
-扩展的 glob 匹配器 `!(...)` 允许我们排除一些东西。 像这样简单地编写 glob：
+扩展glob匹配器`!(...)`允许我们排除某些内容。只需这样写glob：
 
 ```
 {*,*/*}/*/${title}.!(sav)
 ```
 
-具有 `sav` 扩展名的文件将被排除在外。
+那么带有`sav`扩展名的文件将被排除。
 
 ### 检查多个扩展名
 
-扩展的 glob 匹配器 `@(...)` 允许我们匹配多个内容。 像这样简单地编写 glob：
+扩展glob匹配器`@(...)`允许我们匹配多个内容。只需这样写glob：
 
 ```
 {*,*/*}/*/${title}.@(nes|NES)
 ```
 
-只有带有 `nes` 和 `NES` 的文件才会匹配。 如果你感觉很炫酷，或者你有扩展名为 `nes`, `NES`, `neS`, `nEs`, `Nes` 等的文件，那么你需要使用字符范围的通配符：
+然后只有带有`nes`和`NES`的文件才会被匹配。如果您感觉很复杂，或者您的文件扩展名有`nes`、`NES`、`neS`、`nEs`、`Nes`等等，您需要使用字符范围的glob：
 
 ```
 {*,*/*}/*/${title}.@([nN][eE][sS])
 ```
 
-现在解析器可以匹配任何组合，并且是有效的不区分大小写。 从技术上讲，下面的通配符也可以工作，但是上面那个看起来更好。
+现在解析器可以匹配任何组合，并且实际上是不区分大小写的。从技术上讲，以下glob也会起作用，但上面的那个看起来更好。
 
 ```
 {*,*/*}/*/${title}.[nN][eE][sS]
 ```
 
-## 故障处理
+## 故障排除
 
-- 请确保在保存应用程序列表之前， Steam 已经完全关闭。
+- 请确保在保存应用程序列表之前，Steam实际上已关闭。
 
-- Steam ROM Manager 经常遇到的一个问题是，在新库更新之前，曾经在您的计算机上登录过 Steam 的人留下了旧的 steam 目录。 这可能会导致 Steam ROM Manager 以不可预测的方式失败，因为它试图访问目录结构已更改的目录。 为了解决这个问题，请使用“[用户账户](#user-accounts)”字段来指定您实际想要使用 Steam ROM Manager 的帐户。
+- Steam ROM Manager遇到的一个常见问题是，曾经在您的计算机上登录过Steam的旧Steam目录的存在，这些目录是在新库更新之前登录的。这可能会导致Steam ROM Manager以不可预测的方式失败，因为它试图访问结构已发生变化的目录。为了解决这个问题，请使用[用户账户](#user-accounts)字段指定您实际想与Steam ROM Manager一起使用的账户。
 
 ## Discord
 
-如需进一步帮助，请查看我们的 [Discord](https://discord.gg/bnSVJrz)。
+如需进一步帮助，请查看我们的[Discord](https://discord.gg/bnSVJrz)。

@@ -1,46 +1,46 @@
-# 特殊 glob 输入
+# Special 通配符 输入
 
-## 它是如何工作的？
+## How does it work?
 
-图像路径的解析过程分为4个步骤：
+图像 paths are resolved in 4 step process:
 
-1. 字符串被评估以确定是否使用基于通配符的解析器。 根据结果，进一步解析可能会使用`2`个全局集合。
-1. 所有提供的变量都将被替换为它们对应的值。
-1. 新的字符串已经根据根目录解决（根目录始终是配置 ROM 目录）
-1. 最终的字符串被传递给全局解析器，然后返回可用文件列表。
+1. String is evaluated to see if a 通配符 based 解析器 is used. Depending on the result, further parsing may continue with `2` 通配符 sets.
+1. All provided variables are replaced with their corresponding values.
+1. New string(s) is/are resolved against root 目录 (root 目录 is always a configuration's ROMs 目录).
+1. Final string(s) is/are passed to 通配符 解析器 which then returns a list of available files.
 
-## 用法示例
+## Usage 示例
 
-### 绝对路径
+### Absolute paths
 
-Let's say that the extracted title is `Metroid Fusion [USA]` and fuzzy title is `Metroid Fusion`. 然后，您可以像这样构建图像路径： 然后，您可以像这样构建图像路径： 然后，您可以像这样构建图像路径： 然后，您可以像这样构建图像路径： 然后，您可以像这样构建图像路径： 然后，您可以像这样构建图像路径： 然后，您可以像这样构建图像路径： 然后，您可以像这样构建图像路径： 然后，您可以像这样构建图像路径： 然后，您可以像这样构建图像路径： 然后，您可以像这样构建图像路径： 然后，您可以像这样构建图像路径： 然后，您可以像这样构建图像路径： 然后，您可以像这样构建图像路径： 然后，您可以像这样构建图像路径： 然后，您可以像这样构建图像路径： 然后，您可以像这样构建图像路径： 然后，您可以像这样构建图像路径：
+Let's say that the extracted 标题 is `Metroid Fusion [USA]` and 模糊 标题 is `Metroid Fusion`. You can then construct an 图像 路径 like this:
 
-- `C:/path/to/images/${title}.*`
-- `C:/path/to/images/${fuzzyTitle}.*`
+- `C:/路径/to/images/${标题}.*`
+- `C:/路径/to/images/${fuzzyTitle}.*`
 
-这将被解析为：
+which will be resolved to this:
 
-- `C:/path/to/images/Metroid Fusion [USA].png`
-- `C:/path/to/images/Metroid Fusion.jpg`
+- `C:/路径/to/images/Metroid Fusion [USA].png`
+- `C:/路径/to/images/Metroid Fusion.jpg`
 
-### 相对路径
+### Relative paths
 
-For this example, let's say that ROMs directory is `C:/ROMS/GBA` and rom itself is `C:/ROMS/GBA/Metroid Fusion [USA].gba`. Set up a relative path, using `${filePath}`{.noWrap} or `${dir}`{.noWrap} variables, for example: 设置相对路径，使用 `${filePath}`{.noWrap} 或 `${dir}`{.noWrap} 变量，例如： 设置相对路径，使用 `${filePath}`{.noWrap} 或 `${dir}`{.noWrap} 变量，例如： 设置相对路径，使用 `${filePath}`{.noWrap} 或 `${dir}`{.noWrap} 变量，例如： 设置相对路径，使用 `${filePath}`{.noWrap} 或 `${dir}`{.noWrap} 变量，例如： 设置相对路径，使用 `${filePath}`{.noWrap} 或 `${dir}`{.noWrap} 变量，例如： 设置相对路径，使用 `${filePath}`{.noWrap} 或 `${dir}`{.noWrap} 变量，例如：
+For this 示例, let's say that ROMs 目录 is `C:/ROMS/GBA` and rom itself is `C:/ROMS/GBA/Metroid Fusion [USA].gba`. Set up a relative 路径, using `${filePath}`{.noWrap} or `${dir}`{.noWrap} variables, for 示例:
 
-- `${filePath}/../../../path/to/images/${title}.*`
-- `${dir}/../../path/to/images/${title}.*`
+- `${filePath}/../../../路径/to/images/${标题}.*`
+- `${dir}/../../路径/to/images/${标题}.*`
 
-将会被替换成这样：
+will be replaced like this:
 
-- `C:/ROMS/GBA/Metroid Fusion [USA].gba/../../../path/to/images/Metroid Fusion.*`
-- `C:/ROMS/GBA/../../path/to/images/Metroid Fusion.*`
+- `C:/ROMS/GBA/Metroid Fusion [USA].gba/../../../路径/to/images/Metroid Fusion.*`
+- `C:/ROMS/GBA/../../路径/to/images/Metroid Fusion.*`
 
-这里的 `..` 表示“返回”，它允许回到上一个目录：
+Here `..` means "traverse back" and it allows to go back to previous 目录:
 
-- `C:/ROMS/GBA/Metroid Fusion [USA].gba/../../../path/to/images/Metroid Fusion.*`
-  - `C:/ROMS/GBA/../../path/to/images/Metroid Fusion.*`
-    - `C:/ROMS/../path/to/images/Metroid Fusion.*`
-      - `C:/path/to/images/Metroid Fusion.*`
-- `C:/ROMS/GBA/../../path/to/images/Metroid Fusion.*`
-  - `C:/ROMS/../path/to/images/Metroid Fusion.*`
-    - `C:/path/to/images/Metroid Fusion.*`
+- `C:/ROMS/GBA/Metroid Fusion [USA].gba/../../../路径/to/images/Metroid Fusion.*`
+  - `C:/ROMS/GBA/../../路径/to/images/Metroid Fusion.*`
+    - `C:/ROMS/../路径/to/images/Metroid Fusion.*`
+      - `C:/路径/to/images/Metroid Fusion.*`
+- `C:/ROMS/GBA/../../路径/to/images/Metroid Fusion.*`
+  - `C:/ROMS/../路径/to/images/Metroid Fusion.*`
+    - `C:/路径/to/images/Metroid Fusion.*`

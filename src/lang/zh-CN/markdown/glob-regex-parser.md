@@ -1,3 +1,3 @@
-# Glob-regex 解析器
+# 通配符-正则表达式 解析器
 
-一个基于 glob 的路径解析器，用于从文件路径中提取标题。 此外，正则表达式可以进一步修改标题。 这是用于在简单的 “Glob” 解析器不足时使用的。
+A 通配符 based 路径 解析器 used to extract 标题 from a 文件 路径. Furthermore, a regular expression can be used to modify 标题 even further. This is meant to be used when a simple "通配符" 解析器 is not enough.

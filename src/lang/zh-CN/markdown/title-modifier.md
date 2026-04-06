@@ -1,11 +1,11 @@
-# 标题修饰符`[支持变量]`{.noWrap}
+# 标题 modifier `[支持变量]`{.noWrap}
 
-默认值为 `${fuzzyTitle}`{.noWrap}。 此设置可用于在标题前缀或后缀所需的字符，这些字符将添加到 Steam 中。 例如，假设 `${fuzzyTitle}`{.noWrap} 是 `Zelda 2`，您可以通过将值设置为以下内容来添加 `(1.7.5)`:
+Defaults to `${fuzzyTitle}`{.noWrap} if 字段 is unset. This 设置 can be used to prepend or append desired characters to a Steam shortcut's `标题`. For 示例, given that `${fuzzyTitle}`{.noWrap} is `Zelda 2`, you can add ` (1.7.5)` to it by 设置 值 to:
 
 ```
 ${fuzzyTitle} (1.7.5)
 ```
 
-您可以使用 `${title}`{.noWrap} 或任何其他变量来构建最终标题。
+You can use `${标题}`{.noWrap} or any other 变量 to construct the final 标题.
 
-这个设置会影响 Steam 的应用 APP ID。
+This 设置 influences Steam's APP ID.

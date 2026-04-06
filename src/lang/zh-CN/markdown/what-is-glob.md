@@ -1,3 +1,3 @@
-# 什么是 glob？
+# What is 通配符?
 
-Glob 是一种使用通配符描述文件路径的模式。 例如，`*.txt` 将匹配任何以 `.txt` 扩展名结尾的文件。 除了普通的通配符外，其他**特殊**字符也可以用来指定更复杂的模式，使基于 glob 的解析器成为检索文件的强大工具。
+通配符 is a pattern that describes a 文件 路径 using wildcards. For 示例, `*.txt` will 匹配 any 文件 that ends with a `.txt` 扩展名. In addition to normal wildcards, other **special** characters can be used to specify a more complex patterns making 通配符 based 解析器 a powerful tool for retrieving files.

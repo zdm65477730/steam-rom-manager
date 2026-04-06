@@ -1,15 +1,15 @@
-# "Start In” 目录（可选）`[支持环境变量]`{.noWrap}
+# "Start In" 目录 `[supports env variables]`
 
-默认情况下，“Start In” 设置为可执行文件所在的目录：
+If `"Start In" 目录` is unset it defaults to the executable's 目录. If not executable is set, it defaults to the 目录 of the ${filePath} 变量:
 
-![默认的 "Start In" 目录](../../../assets/images/default-start-in-directory.png) {.fitImage.center}
+![默认 "Start In" 目录](../../../assets/images/默认-start-in-目录.png) {.fitImage .center}
 
-此选项允许您指定任何目录作为 “Start In”：
+This 选项 allows you to specify any 目录 you want as a "Start In" 目录:
 
-![Ner "Start In" 目录](../../../assets/images/new-start-in-directory.png) {.fitImage.center}
+![Ner "Start In" 目录](../../../assets/images/new-start-in-目录.png) {.fitImage .center}
 
-当您使用批处理文件启动模拟器和游戏时，如果模拟器需要特定的 “Start In” 才能正常工作，则此功能非常有用。
+It is useful when you're using batch files to start emulator and a game, but emulator requires a specific "Start In" 目录 to work properly.
 
-## 快捷方式直通
+## Shortcut Passthrough
 
-如果您启用了 “Follow .lnk 到目标” 选项，并且您的可执行文件是 “.lnk” 文件，即快捷方式，则无论您在此字段中输入什么内容都将被覆盖为该快捷方式目标的目录。 将来，它将被覆盖为该快捷方式的起始目录。
+If you 启用 "Follow .lnk to destination" and your executable is a ".lnk" 文件, ie a shortcut, then whatever you put in this 字段 will be overridden with the 目录 of the target of that shortcut. In the future, it will be overridden with the start in 目录 of that shortcut.

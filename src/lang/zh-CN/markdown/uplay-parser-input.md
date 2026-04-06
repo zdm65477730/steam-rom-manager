@@ -1,11 +1,11 @@
-# UPlay 解析器的独特输入
+# UPlay 解析器 Specific Inputs
 
-## Ubisoft 目录覆盖
+## Ubisoft 目录 Override
 
-默认情况下，Steam ROM Manager 假定您的 UPlay 安装位于 `C:\Program Files (x86)\Ubisoft`。 如果你的 UPlay 安装在其他位置，这个字段允许你覆盖那个路径。
+By 默认 Steam ROM Manager assumes your UPlay install is located in `C:\Program Files (x86)\Ubisoft`. This 字段 allows you to override that 路径 if your UPlay installation is elsewhere.
 
-## 通过 UPlay 启动`[建议禁用]`
+## Launch Via UPlay `[Recommend disabled]`
 
-听起来像是，这个开关可以让你设置游戏是通过 UPlay 启动还是直接从游戏的可执行文件启动。
+What it sounds like, this toggle let's you set whether games will launch via UPlay or directly from the game's executable.
 
-对于 UPlay 来说，这并不太重要，因为即使从可执行文件启动游戏，UPlay 游戏也会自动在后台启动 UPlay。 当启用`通过 UPlay 启动`时，Steam 覆盖层将无法工作，而当禁用 `通过 UPlay 启动` 时，Steam 和 Ubisoft 覆盖层都可以正常工作。
+For UPlay this doesn't matter too much as UPlay games will automatically launch UPlay in the background even when launched from the executable. Steam Overlay will not work when `Launch via UPlay` is enabled, whereas both Steam and Ubisoft overlays work when `Launch via UPlay` 被禁用.

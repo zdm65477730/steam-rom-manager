@@ -1,45 +1,50 @@
-# 手动解析器特定输入
+# Manual 解析器 Specific Inputs
 
-## 清单目录 `[支持环境变量]`{.noWrap}
+## Manifests 目录 `[支持 Environment Variables]`{.noWrap}
 
-您想将其转换为 Steam 快捷方式的 JSON 文件位置。 `清单目录` 应该是以下形式：
+The location of the json files you want to turn into Steam shortcuts. `Manifests 目录` is expected to be of the form:
 
 ```
-/path/to/manifests
+/路径/to/manifests
 --manifest1.json
 --manifest2.json
 --manifest3.json
 ...
 ```
 
-文件的名称并不重要。 重要的是每个 `manifest.json` 文件都只有一个标题，如下所示：
+The names of the files do not matter. 有什么作用 matter is that each `manifest.json` 文件 is either a single 标题, like so:
 
 ```json
 {
-  "title": "gameTitle",
-  "target": "game/path/target.sh",
-  "startIn": "game/path",
-  "launchOptions": "--args"
+  "标题": "gameTitle",
+  "target": "game/路径/target.sh",
+  "startIn": "game/路径",
+  "launchOptions": "--args",
+  "appendArgsToExecutable": false
 }
 ```
 
-或者是标题列表，像这样：
+Or a list of titles, like so:
 
 ```json
 [
   {
-    "title": "gameTitle",
-    "target": "game/path/target.sh",
-    "startIn": "game/path",
-    "launchOptions": "--args"
+    "标题": "gameTitle",
+    "target": "game/路径/target.sh",
+    "startIn": "game/路径",
+    "launchOptions": "--args".
+    "appendArgsToExecutable": true
   },
   {
-    "title": "gameTitle2",
-    "target": "game2/path/target.sh",
-    "startIn": "game2/path",
-    "launchOptions": "--args2"
+    "标题": "gameTitle2",
+    "target": "game2/路径/target.sh",
+    "startIn": "game2/路径",
+    "launchOptions": "--args2",
+    "appendArgsToExecutable": false
   }
 ]
 ```
 
-一个典型的用例是每种游戏类型或每年代使用一个 json 文件。
+A typical use case would be to use a single json 文件 per game 类型, or per year, etc.
+
+Just like for ROM parsers, `appendArgsToExecutable` determines whether `launchOptions` are appended to the shortcut `target` or appear separately as 启动选项 in Steam.

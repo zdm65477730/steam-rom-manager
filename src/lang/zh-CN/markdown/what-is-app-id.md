@@ -1,18 +1,18 @@
-# Steam 的 APP ID 是什么？
+# What is Steam's APP ID?
 
-Steam 使用 APP ID 来识别游戏。 对于非 Steam 游戏，它们是使用以下方式生成的：
+Steam uses APP ID to identify games. For non-Steam games they are generated using:
 
-- 可执行文件;
-- 最终应用程序标题。
+- Executable;
+- Final app 标题.
 
-如果您使用`RetroArch`或类似的模拟器来添加相同游戏但在不同的控制台上，您将遇到一个问题，即只有**一个**标题被添加而其他标题会消失。 这是由于重复的 APP ID。
+If you use `RetroArch` or similar emulators to add the same game, but on different consoles, you will encounter a problem where only **one** 标题 is added and others just disappear. This is due to duplicate APP IDs.
 
-## 从不同的游戏机添加相同的标题
+## Adding identical titles from different consoles
 
-Steam APP ID 不能相同。 这可以通过更改**标题修饰符**值或启用**将参数附加到可执行文件**来实现。 第二个选项向 APP ID 添加了第三个变量：
+Steam APP ID must not be identical. This can be achieved by changing **标题 modifier** 值 or enabling **将参数附加到可执行文件**. Second 选项 adds a third 变量 to APP ID:
 
-- 可执行文件;
-- 最终应用程序标题;
+- Executable;
+- Final app 标题;
 - 命令行参数.
 
-大多数情况下，命令行将包含唯一的游戏路径，这应该允许生成唯一的 APP ID。
+Most of the time command line will contain unique game 路径 which should allow to generate unique APP IDs.

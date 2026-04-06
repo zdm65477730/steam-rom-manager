@@ -1,11 +1,11 @@
-# UWP 解析器的独特输入
+# UWP 解析器 Specific Inputs
 
-## 游戏目录
+## Games 目录
 
-UWP 应用程序应该说明它们是游戏还是应用程序，但这并不总是正确的。 为了解决这个问题，有用的方法是指定你安装游戏的位置，只扫描那些 UWP 应用程序。 默认为 `C:\XboxGames`。
+UWP apps are supposed to say if they are games or apps, and this is not always correct. To remediate this, it's useful to say where you're installing your games to only scan for those UWP apps. Defaults to `C:\XboxGames`.
 
-将其设置为 `C:\Program Files\WindowsApps` 以抓取所有UWP应用程序 -- 您将不得不手动删除不需要的应用程序。
+Set it to `C:\Program Files\WindowsApps` to grab all UWP applications -- you'll have to remove unwanted ones by hand.
 
-## 作为 UWP 启动或从 GameLaunchHelper.exe 启动
+## Launch as UWP or from GameLaunchHelper.exe
 
-Game Pass 游戏可以通过两种方式启动，尽管 UWP 更受欢迎。
+Gamepass games can be launched both ways, although UWP is preferred.

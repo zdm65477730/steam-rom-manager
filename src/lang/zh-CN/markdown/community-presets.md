@@ -1,13 +1,13 @@
-# 社区预设
+# Community Presets
 
-这些是由 SRM 社区创建的解析器配置，只需要稍微调整一下几个系统特定参数就可以工作了 (通常只需要指定 `ROMs目录` 和 `可执行文件`)。
+These are 解析器 configurations that have been created by the SRM community and just need to be altered slightly with a few system specific parameters in order to work (usually just `ROMs 目录` and `Executable` need to be specified).
 
-## 通用解析器
+## Generic 解析器
 
-通用解析器 (在预设中搜索 `Generic`) 适用于许多不需要特定命令行参数即可工作的模拟器，例如：
+The Generic 解析器 (search `Generic` in presets) works for a wide variety of emulators that don't need specific commandline arguments in order to work, for 示例:
 
 - Yuzu
 - Citra
-- Xenia (在 `命令行参数` 中添加 `--fullscreen`)
+- Xenia (add `--fullscreen` in `Command Line Arguments` if desired)
 
-如果您有一个不在社区预设列表中的模拟器，尝试使用通用解析器可能是值得一试的。 如果它有效，请告诉我们，我们会为其添加一个预设！
+If you have an emulator that isn't in the list of community presets, it is probably worth a shot to try the generic 解析器. If it works let us know and we will add a preset for it!

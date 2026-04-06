@@ -1,3 +1,5 @@
-# 配置标题
+# 解析器 标题
 
-将用户配置保存为的标题。 不必唯一，但是必须存在。
+标题 of the 解析器. Does not have to be unique, but is 必需.
+
+This 字段 will not affect what is added to `Steam` in any way.

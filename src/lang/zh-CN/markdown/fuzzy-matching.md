@@ -1,19 +1,19 @@
 # 模糊匹配
 
-将对 [SteamGridDB](http://www.steamgriddb.com/) 提供的标题列表进行模糊匹配。 它将尝试填补标题中缺失的字符，从而增加找到图片的概率。
+模糊（自然）匹配将针对[SteamGridDB](http://www.steamgriddb.com/)提供的标题列表进行。它将尝试填补标题中缺失的字符，从而增加查找图像的概率。
 
-Fuzzy titles are available as title modifiers via `${fuzzyTitle}`. Currently fuzzy matching is only enabled for `ROM Parsers` and `Manual Parsers`. Currently fuzzy matching is only enabled for `ROM Parsers` and `Manual Parsers`. 目前模糊匹配仅适用于`ROM 解析器`和`手动解析器`。 目前模糊匹配仅适用于 `ROM 解析器` 和 `手动解析器`。
+模糊标题可通过标题修饰符`${fuzzyTitle}`使用。目前模糊匹配仅对`ROM解析器`和`手动解析器`启用。
 
-It is possible, that `false` matching might occur for titles that are not in the list. It is possible, that `false` matching might occur for titles that are not in the list. If you encounter missing titles, feel free to post an issue on [github](https://github.com/FrogTheFrog/steam-rom-manager/issues). It is possible, that `false` matching might occur for titles that are not in the list. If you encounter missing titles, feel free to post an issue on [github](https://github.com/FrogTheFrog/steam-rom-manager/issues). It is possible, that `false` matching might occur for titles that are not in the list. It is possible, that `false` matching might occur for titles that are not in the list. If you encounter missing titles, feel free to post an issue on [github](https://github.com/FrogTheFrog/steam-rom-manager/issues). It is possible, that `false` matching might occur for titles that are not in the list. If you encounter missing titles, feel free to post an issue on [github](https://github.com/FrogTheFrog/steam-rom-manager/issues). 如果你遇到缺失的标题，请随时在 [GitHub](https://github.com/FrogTheFrog/steam-rom-manager/issues) 上发布问题。
+对于列表中没有的标题，可能会出现`错误`匹配。如果您遇到缺少的标题，请随时在[github](https://github.com/FrogTheFrog/steam-rom-manager/issues)上发布问题。
 
 ## 替换变音符号字符
 
-Replaces diacritic characters to their latin equivalent: `Ą` -> `A`, `Ę` -> `E`, `Ė` -> `E`, etc. Might improve the matching ability of fuzzy matcher. Might improve the matching ability of fuzzy matcher. 可能会提高模糊匹配器的匹配能力。 可能会提高模糊匹配器的匹配能力。
+将变音符号字符替换为其拉丁字母等价物：`Ą` -> `A`，`Ę` -> `E`，`Ė` -> `E`等。可能会提高模糊匹配器的匹配能力。
 
-## 积极匹配
+## 激进匹配
 
-When enabled, fuzzy matcher will remove all characters except for `a-zA-Z0-9 ()[]` and will replace `_` with space. This should improve the matching ability of fuzzy matcher. This should improve the matching ability of fuzzy matcher. 这应该会提高模糊匹配器的匹配能力。 这应该会提高模糊匹配器的匹配能力。
+启用后，模糊匹配器将删除除`a-zA-Z0-9 ()[]`之外的所有字符，并将`_`替换为空格。这应该能提高模糊匹配器的匹配能力。
 
-## 删除 (...) 和 [...] 括号
+## 删除(...)和[...]括号
 
-When enabled, fuzzy matcher will remove all `(...)`{.noWrap} and `[...]`{.noWrap} together with their content. Useful for titles with `[USA]`{.noWrap}, `[JPN]`{.noWrap} and etc., as they prevent from matching titles correctly. Useful for titles with `[USA]`{.noWrap}, `[JPN]`{.noWrap} and etc., as they prevent from matching titles correctly. 适用于带有`[USA]`{.noWrap}，`[JPN]`{.noWrap}等的标题，因为它们可以防止正确匹配标题。 适用于带有 `[USA]`{.noWrap}，`[JPN]`{.noWrap} 等的标题，因为它们可以防止正确匹配标题。
+启用后，模糊匹配器将删除所有`(...)`{.noWrap}和`[...]`{.noWrap}及其内容。对于带有`[USA]`{.noWrap}、`[JPN]`{.noWrap}等内容的标题很有用，因为它们会阻止标题的正确匹配。

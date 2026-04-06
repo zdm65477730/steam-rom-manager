@@ -1,7 +1,17 @@
-# Legendary 解析器特定输入
+# Legendary 解析器 Specific Inputs
 
-## Legendary `installed.json` 路径覆盖
+## Legendary 路径 Override
 
-大多数用户不应该使用这个，因为他们使用标准的 `Legendary` 安装，在那里已安装游戏清单将位于`~/.config/legendary/installed.json`。
+By 默认 Steam ROM Manager uses `(Get-Command legendary).路径` on Windows and `which legendary` on Linux and Mac to determine the location of your Legendary executable. This 字段 allows you to override that 路径.
 
-然而，如果由于某些原因您安装的游戏清单位于非典型位置，则可以在此处指定正确的清单路径。
+Specifying the correct location of the Legendary executable is only necessary if you 启用 launch via Legendary (see below), as 否则 SRM has no need of the location of Legendary's executable.
+
+## Legendary `installed.json` 路径 Override
+
+Most users shouldn't use this, as they use the standard `Legendary` installation where installed games manifest will be located at `~/.config/legendary/installed.json`.
+
+If, however, for some reason your installed games manifest is located in a non-typical location then you can specify the correct manifest 路径 here.
+
+## Launch via Legendary `[Recommend enabled]`
+
+What it sounds like, this toggle determines whether games launch via Legendary or directly. Launching via Legendary provides access to Epic's 在线 services.

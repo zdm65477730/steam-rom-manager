@@ -1,5 +1,5 @@
-# 全局解析器
+# 通配符 解析器
 
-一个基于通配符的路径解析器，用于从文件路径中提取标题。
+A 通配符 based 路径 解析器 used to extract 标题 from a 文件 路径.
 
-如果您的 ROM 目录（例如`D:\ROMS`）包含`Donkey Kong.gba`，`Super Mario.gba`和`Sonic.gba`，那么glob `${title}.gba` 将找到标题为`Donkey Kong`, `Super Mario`和`Sonic`。
+If your ROMs 目录 (eg. `D:\ROMS`) contains `Donkey Kong.gba`,`Super Mario.gba`, and `Sonic.gba` then the 通配符 `${标题}.gba` will find titles `Donkey Kong`, `Super Mario`, and `Sonic`.

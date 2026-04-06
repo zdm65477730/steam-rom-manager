@@ -1,7 +1,7 @@
 # GOG Galaxy 解析器
 
-This parser imports games from `GOG Galaxy` so that artwork can be chosen for them and they can be added into Steam. If it doesn't work it is because GOG Galaxy has altered the structure of their game database, in this case please let the developers of SRM know and we will resolve the issue. 如果它无法正常工作，那是因为 GOG Galaxy 已经更改了他们的游戏数据库结构，在这种情况下，请让 SRM 的开发人员知道，我们将解决此问题。 如果它无法正常工作，那是因为 GOG Galaxy 已经更改了他们的游戏数据库结构，在这种情况下，请让 SRM 的开发人员知道，我们将解决此问题。
+This 解析器 imports games from `GOG Galaxy` so that 艺术作品 can be chosen for them and they can be added into Steam. If it doesn't work it is because GOG Galaxy has altered the structure of their game database, 在这种情况下 please let the developers of SRM know and we will resolve the issue.
 
-## 兼容性
+## Compatibility
 
-该解析器目前仅在 `Windows` 系统上可用。
+This 解析器 is currently functional on `Windows` systems only.

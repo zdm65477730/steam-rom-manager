@@ -1,57 +1,57 @@
-# 通配符-正则表达式 解析器 Specific Inputs
+# 通配符-正则表达式解析器特定输入
 
-## 用户's 通配符-正则表达式
+## 用户的通配符-正则表达式
 
-This is where you create your 通配符 for extracting 标题 from 文件 路径. Please read all of [special 通配符 characters](#special-通配符-characters) if you don't know how to construct a 通配符.
+这是您创建通配符以从文件路径中提取标题的地方。如果您不知道如何构建通配符，请阅读全部[特殊通配符字符](spec-glob-chars.md)说明。
 
-## How does it work?
+## 它是如何工作的？
 
-In addition to special 通配符 characters, 通配符 解析器 requires you to enter `${/.../}`{.noWrap} 变量. 解析器 will locate it's position inside your 通配符, for 示例:
+除了特殊通配符字符外，通配符解析器还需要您输入 `${/.../}`{.noWrap} 变量。解析器将在您的通配符中定位它的位置，例如：
 
-| 用户's 通配符           | Position                    |
+| 用户的通配符           | 位置                        |
 | --------------------- | --------------------------- |
-| `${/.+/}/*/*.txt`     | First level from the left   |
-| `{*,*/*}/${/.+/}.txt` | First level from the right  |
-| `**/${/.+/}/*.txt`    | Second level from the right |
+| `${/.+/}/*/*.txt`     | 从左侧开始的第一级          |
+| `{*,*/*}/${/.+/}.txt` | 从右侧开始的第一级          |
+| `**/${/.+/}/*.txt`    | 从右侧开始的第二级          |
 
-After acquiring `${/.../}`{.noWrap} position, `${/.../}`{.noWrap} will be replaced with a wildcard `*`.
+获取 `${/.../}`{.noWrap} 位置后，`${/.../}`{.noWrap} 将被通配符 `*` 替换。
 
-## 正则表达式 post-processing
+## 正则表达式后处理
 
-After 标题 extraction, 标题 will be processed by a regular expression. There are 3 ways you can write a regular expression.
+标题提取后，标题将由正则表达式处理。您可以通过3种方式编写正则表达式。
 
-### Regular expression with no capture: `${/.+/}`{.noWrap}
+### 无捕获的正则表达式: `${/.+/}`{.noWrap}
 
-This is practically identical to "通配符" 解析器 -- every piece of extracted 标题 will be used.
+这实际上与"通配符"解析器相同 -- 每个提取的标题片段都将被使用。
 
-### Regular expression with capture brackets: `${/(.+)/}`{.noWrap}
+### 带捕获括号的正则表达式: `${/(.+)/}`{.noWrap}
 
-Multiple matches and capture groups are allowed. For 示例, here we have 2 匹配 groups with multiple capture groups:
+允许多次匹配和捕获组。例如，这里我们有2个匹配组，包含多个捕获组：
 
 ```
 ${/(.*?)\s*\[USA\]\s*(.+)|(.*)/}
 ```
 
-First 匹配 group (from left to right) with all correct captures will be used. Furthermore, all capture groups will be **joined**.
+第一个匹配组（从左到右）的所有正确捕获将被使用。此外，所有捕获组将被**连接**。
 
-### Regular expression with capture brackets and replacement text: `${/(.+)/|...}`{.noWrap}
+### 带捕获括号和替换文本的正则表达式: `${/(.+)/|...}`{.noWrap}
 
-Similar to [regular expression with capture brackets](#regular-expression-with-capture-brackets) 除了 how it handles 捕获组. Replacement text can be used to move around 捕获组. For 示例:
+类似于[带捕获括号的正则表达式](#regular-expression-with-capture-brackets)，但处理捕获组的方式不同。替换文本可用于移动捕获组。例如：
 
 ```
-${/(.*?)\s*\[USA\]\s*(.+)/|Second capture group: "$2" precedes the first one, which is "$1" }
+${/(.*?)\s*\[USA\]\s*(.+)/|第二个捕获组: "$2" 在第一个捕获组之前，即 "$1"}
 ```
 
-If our first capture group is `Legend of Zelda` and second one is `SUPER EDITION`, then we will get the following (not very useful) 标题:
+如果我们的第一个捕获组是 `塞尔达传说`，第二个是 `超级版`，那么我们将得到以下（不太有用的）标题：
 
-`Second capture group: "SUPER EDITION" precedes the first one, which is "Legend of Zelda"`
+`第二个捕获组: "超级版" 在第一个捕获组之前，即 "塞尔达传说"`
 
-Untouched text will remain by 默认, so if you see some trailing characters be sure to add `.*` at the end or `.*?` at the begging of regular expression.
+未触及的文本将默认保留，所以如果您看到一些尾随字符，请务必在正则表达式的末尾添加 `.*` 或开头添加 `.*?`。
 
-### Supported 标志
+### 支持的标志
 
-Allowed 标志 are `i`, `g` and `u`.
+允许的标志是 `i`、`g` 和 `u`。
 
-## Limitations
+## 限制
 
-Position extraction comes with some limitations -- 通配符 is invalid if position can not be extracted. Most of the time you will be warned about what you can't do, however, if you find a combination that is allowed, but produces incorrect titles please make an issue at [github](https://github.com/FrogTheFrog/Steam-rom-manager/issues).
+位置提取带有一些限制 —— 如果无法提取位置，则通配符无效。大多数情况下，您会收到有关哪些操作不可行的警告。但是，如果您发现某个组合被允许，但产生了不正确的标题，请在 [github](https://github.com/FrogTheFrog/Steam-rom-manager/issues) 上提交问题。

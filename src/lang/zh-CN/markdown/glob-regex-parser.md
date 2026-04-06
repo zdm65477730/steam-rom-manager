@@ -1,3 +1,3 @@
-# 通配符-正则表达式 解析器
+# 通配符-正则表达式解析器
 
-A 通配符 based 路径 解析器 used to extract 标题 from a 文件 路径. Furthermore, a regular expression can be used to modify 标题 even further. This is meant to be used when a simple "通配符" 解析器 is not enough.
+一种基于通配符的路径解析器，用于从文件路径中提取标题。此外，还可以使用正则表达式进一步修改标题。这在简单的"通配符"解析器不够用时使用。

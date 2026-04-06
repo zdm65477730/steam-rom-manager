@@ -1,13 +1,13 @@
-# itch.io 解析器 Specific Inputs
+# itch.io 解析器特定输入
 
-## itch.io AppData 路径 Override
+## itch.io AppData 路径覆盖
 
-By 默认 Steam ROM Manager assumes your itch.io app data is located at `%APPDATA%\itch` on windows `$HOME/.config/itch` on linux and `$HOME/Library/Application Support/itch` on macos.
-This 字段 allows you to override that 路径 if your itch.io 用户 data is elsewhere.
+默认情况下，Steam ROM Manager 假定您的 itch.io 应用数据在 Windows 上位于 `%APPDATA%\itch`，在 Linux 上位于 `$HOME/.config/itch`，在 macOS 上位于 `$HOME/Library/Application Support/itch`。
+如果您的 itch.io 用户数据在其他位置，此字段允许您覆盖该路径。
 
-## itch.io Windows-on-Linux Install Drive Redirect
+## itch.io Linux 上 Windows 游戏安装驱动器重定向
 
-On Linux, Windows app locations are recorded with Windows paths, even if running via Proton/Wine. If set, this 字段 replaces the root of game paths.
-For 示例, this would change a `C:\\路径\To\Game.exe` to `<字段 值>/路径/To/Game.exe`.
+在 Linux 上，即使通过 Proton/Wine 运行，Windows 应用位置也会使用 Windows 路径记录。如果设置，此字段将替换游戏路径的根目录。
+例如，这会将 `C:\\Path\To\Game.exe` 更改为 `<字段值>/Path/To/Game.exe`。
 
-This 字段 only has an effect on Linux systems.
+此字段仅在 Linux 系统上生效。

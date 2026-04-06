@@ -1,9 +1,9 @@
-# Steam 解析器 Specific Inputs
+# Steam 解析器特定输入
 
-## Find 艺术作品 for games only
+## 仅为游戏查找艺术作品
 
-If enabled SRM will filter out any Steam applications that are not full games, such as demos and tools like `3DMark` or `Wallpaper Engine`.
+如果启用，SRM将过滤掉任何不是完整游戏的Steam应用程序，例如演示版和像`3DMark`或`Wallpaper Engine`这样的工具。
 
-## Find 艺术作品 for installed titles only
+## 仅为已安装的标题查找艺术作品
 
-If enabled SRM will filter out any Steam applications that are not currently installed locally. If you install or uninstall a game, you need to restart Steam before the updated install list will be available to SRM.
+如果启用，SRM将过滤掉当前未在本地安装的任何steam应用程序。如果您安装或卸载游戏，则需要重启Steam才能使更新的安装列表对SRM可用。

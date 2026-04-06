@@ -1,3 +1,3 @@
 # itch.io 解析器
 
-This 解析器 imports games from `the itch.io desktop app` so that 艺术作品 can be chosen for them and they can be added into Steam. If it doesn't work it is because itch.io has altered the structure of their game database, 在这种情况下 please let the developers of SRM know and we will resolve the issue.
+此解析器从`itch.io桌面应用程序`导入游戏，以便可以为它们选择艺术作品并将其添加到Steam中。如果它无法工作，那是因为itch.io更改了他们的游戏数据库结构，在这种情况下请通知SRM的开发者，我们会解决问题。

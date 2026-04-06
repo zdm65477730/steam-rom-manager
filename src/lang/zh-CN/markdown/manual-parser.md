@@ -1,3 +1,3 @@
-# Manual 解析器
+# 手动解析器
 
-This 解析器 is able to turn json files into Steam shortcuts. It is useful for the creation of manual shortcuts to applications in Linux (in Windows the shortcut preset may be used instead to parse a 目录 of `.lnk` files).
+此解析器能够将json文件转换为steam快捷方式。这对于在Linux中创建应用程序的手动快捷方式很有用（在Windows中可以使用快捷方式预设来解析包含`.lnk`文件的目录）。

@@ -1,11 +1,11 @@
-# EA Desktop 解析器 Specific Inputs
+# EA Desktop 解析器特定输入
 
-## EA Games 目录 Override
+## EA Games 目录覆盖
 
-By 默认 Steam ROM Manager assumes your `EA Desktop` games are installed at `C:\Program Files\EA Games\`. This 字段 allows you to change that to wherever your games are installed, e.g. `D:\Games\EA Games`.
+默认情况下，Steam ROM Manager 假定您的 `EA Desktop` 游戏安装在 `C:\Program Files\EA Games\`。此字段允许您将其更改为您的游戏安装位置，例如 `D:\Games\EA Games`。
 
-## Launch Games Via EA Desktop
+## 通过 EA Desktop 启动游戏
 
-If enabled SRM will add a shortcut to `origin2://game/launch/?offerIds=${gameid}` instead of just the game's executable. This ensures the game launches via EA and will have access to 在线 services.
+如果启用，SRM 将添加一个指向 `origin2://game/launch/?offerIds=${gameid}` 的快捷方式，而不是仅使用游戏的可执行文件。这确保游戏通过 EA 启动并能访问在线服务。
 
-`This is 必需 to add EA Play games. EA Play games will not be detected if this is not toggled on.`
+`添加 EA Play 游戏时这是必需的。如果不开启此选项，EA Play 游戏将不会被检测到。`

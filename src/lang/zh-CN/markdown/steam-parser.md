@@ -1,3 +1,3 @@
 # Steam 解析器
 
-This 解析器 imports Steam games into SRM so you can manage their 艺术作品. It does not add shortcuts, and as such is an `艺术作品 Only` 解析器. This 解析器 requires the `用户 Accounts` 字段 to be set.
+此解析器将 Steam 游戏导入 SRM，以便您可以管理它们的艺术作品。它不会添加快捷方式，因此是一个`仅艺术作品`解析器。此解析器需要设置`用户账户`字段。

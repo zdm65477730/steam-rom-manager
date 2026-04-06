@@ -1,21 +1,21 @@
-# 通配符 解析器 Specific Inputs
+# 通配符解析器特定输入
 
-## 用户's 通配符
+## 用户的通配符
 
-This is where you create your 通配符 for extracting 标题 from 文件 路径. Please read all of [special 通配符 characters](#special-通配符-characters) if you don't know how to construct a 通配符.
+这是您创建通配符以从文件路径中提取标题的地方。如果您不知道如何构建通配符，请阅读全部[特殊通配符字符](spec-glob-chars.md)说明。
 
-## How does it work?
+## 它是如何工作的？
 
-In addition to special 通配符 characters, 通配符 解析器 requires you to enter `${标题}`{.noWrap} 变量. 解析器 will locate it's position inside your **通配符**, for 示例:
+除了特殊通配符字符外，通配符解析器还需要您输入 `${title}`{.noWrap} 变量。解析器将在您的**通配符**中定位它的位置，例如：
 
-| 用户's 通配符            | Position                    |
+| 用户的通配符              | 位置                        |
 | ---------------------- | --------------------------- |
-| `${标题}/*/*.txt`     | First level from the left   |
-| `{*,*/*}/${标题}.txt` | First level from the right  |
-| `**/${标题}/*.txt`    | Second level from the right |
+| `${title}/*/*.txt`     | 从左侧开始的第一级          |
+| `{*,*/*}/${title}.txt` | 从右侧开始的第一级          |
+| `**/${title}/*.txt`    | 从右侧开始的第二级          |
 
-After acquiring `${标题}`{.noWrap} position, `${标题}`{.noWrap} will be replaced with a wildcard `*`.
+获取 `${title}`{.noWrap} 位置后，`${title}`{.noWrap} 将被通配符 `*` 替换。
 
-## Limitations
+## 限制
 
-Position extraction comes with some limitations -- 通配符 is invalid if position can not be extracted. Most of the time you will be warned about what you can't do, however, if you find a combination that is allowed, but produces incorrect titles please make an issue at [github](https://github.com/FrogTheFrog/Steam-rom-manager/issues).
+位置提取带有一些限制 —— 如果无法提取位置，则通配符无效。大多数情况下，您会收到有关哪些操作不可行的警告。但是，如果您发现某个组合被允许，但产生了不正确的标题，请在 [github](https://github.com/FrogTheFrog/Steam-rom-manager/issues) 上提交问题。

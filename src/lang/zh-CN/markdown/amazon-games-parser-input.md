@@ -1,9 +1,9 @@
-# Amazon Games 解析器 Specific Inputs
+# Amazon Games 解析器特定输入
 
-## Amazon Games 路径 Override
+## Amazon Games 路径覆盖
 
-By 默认 Steam ROM Manager assumes your Amazon Games installation is located at `C:\Users\<username>\AppData\本地\Amazon Games\App\Amazon Games.exe`. This 字段 allows you to override that 路径 if your Amazon Games installation is elsewhere.
+默认情况下，Steam ROM Manager 假定您的 Amazon Games 安装在 `C:\Users\<username>\AppData\Local\Amazon Games\App\Amazon Games.exe`。如果您的 Amazon Games 安装在其他位置，此字段允许您覆盖该路径。
 
-## Launch Via Amazon Games
+## 通过 Amazon Games 启动
 
-What it sounds like, this toggle let's you set whether games will launch via Amazon Games or directly.
+顾名思义，此切换选项让您设置游戏是通过 Amazon Games 还是直接启动。

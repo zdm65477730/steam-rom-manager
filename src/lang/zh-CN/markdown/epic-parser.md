@@ -1,13 +1,13 @@
 # Epic Games 解析器
 
-This 解析器 imports games from the [Epic Games Store](https://store.epicgames.com/en-US/) so that 艺术作品 can be chosen for them and they can be added into Steam.
+此解析器从[Epic Games Store](https://store.epicgames.com/en-US/)导入游戏，以便可以为它们选择艺术作品并将其添加到Steam中。
 
-If it doesn't work it is because Epic has altered the structure of their game manifests, 在这种情况下 please let the developers of SRM know and we will resolve the issue.
+如果它无法工作，那是因为Epic更改了他们的游戏清单结构，在这种情况下请通知SRM的开发者，我们会解决问题。
 
-In order for this 解析器 to work with the open source Epic alternative [Legendary](https://github.com/derrod/legendary), [EGL sync must be enabled in Legendary](https://github.com/derrod/legendary/discussions/276#discussioncomment-709748) (this creates the appropriate files for the 解析器 to read, and does not require the `Epic Games Store` to be installed).
+为了让此解析器能与开源的Epic替代品[Legendary](https://github.com/derrod/legendary)一起工作，[必须在Legendary中启用EGL同步](https://github.com/derrod/legendary/discussions/276#discussioncomment-709748)（这将创建解析器读取的适当文件，并且不需要安装`Epic Games Store`）。
 
-That said, there is also a `Legendary` 解析器 in SRM which works right out of the box.
+也就是说，SRM中还有一个`Legendary`解析器，它可以开箱即用。
 
-## Compatibility
+## 兼容性
 
-This 解析器 is currently functional on `Windows` and `Mac OS` systems only. On `Mac OS` it is not possible to launch from the Epic Store, so that toggle should remain disabled.
+此解析器目前仅在`Windows`和`Mac OS`系统上可用。在`Mac OS`上无法从Epic商店启动，因此该切换开关应保持禁用状态。

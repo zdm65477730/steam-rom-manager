@@ -1,11 +1,11 @@
-# Epic Games Store Specific Inputs
+# Epic Games Store 特定输入
 
-## Manifests 目录 Override
+## Manifests 目录覆盖
 
-Most users shouldn't use this, as they use the standard `Epic Games Store` installation where the game manifests will be located in, for 示例 on Windows, `C:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests`.
+大多数用户不应该使用此功能，因为他们使用标准的 `Epic Games Store` 安装，游戏清单将位于其中，例如在 Windows 上，`C:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests`。
 
-If, however, for some reason your manifests 目录 is located in a non-typical location then you can specify the correct manifests 目录 here.
+然而，如果由于某种原因您的清单目录位于非典型位置，则可以在此处指定正确的清单目录。
 
-## Launch Via Epic Games Store `[Recommend enabled]`
+## 通过 Epic Games Store 启动 `[建议启用]`
 
-This toggle lets you set whether games will launch via the Epic Games Store or directly. If you don't launch via the `Epic Games Store` you will not have access to Epic's 在线 services in game.
+此切换选项让您设置游戏是通过 Epic Games Store 还是直接启动。如果不通过 `Epic Games Store` 启动，您将无法在游戏中访问 Epic 的在线服务。

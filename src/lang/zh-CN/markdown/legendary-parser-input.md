@@ -1,17 +1,17 @@
-# Legendary 解析器 Specific Inputs
+# Legendary 解析器特定输入
 
-## Legendary 路径 Override
+## Legendary 路径覆盖
 
-By 默认 Steam ROM Manager uses `(Get-Command legendary).路径` on Windows and `which legendary` on Linux and Mac to determine the location of your Legendary executable. This 字段 allows you to override that 路径.
+默认情况下，Steam ROM Manager 在 Windows 上使用 `(Get-Command legendary).Path`，在 Linux 和 Mac 上使用 `which legendary` 来确定您的 Legendary 可执行文件的位置。此字段允许您覆盖该路径。
 
-Specifying the correct location of the Legendary executable is only necessary if you 启用 launch via Legendary (see below), as 否则 SRM has no need of the location of Legendary's executable.
+只有在您启用通过 Legendary 启动（见下文）时才需要指定 Legendary 可执行文件的正确位置，否则 SRM 不需要知道 Legendary 可执行文件的位置。
 
-## Legendary `installed.json` 路径 Override
+## Legendary `installed.json` 路径覆盖
 
-Most users shouldn't use this, as they use the standard `Legendary` installation where installed games manifest will be located at `~/.config/legendary/installed.json`.
+大多数用户不应该使用此功能，因为他们使用标准的 `Legendary` 安装，已安装的游戏清单将位于 `~/.config/legendary/installed.json`。
 
-If, however, for some reason your installed games manifest is located in a non-typical location then you can specify the correct manifest 路径 here.
+然而，如果由于某种原因您的已安装游戏清单位于非典型位置，则可以在此处指定正确的清单路径。
 
-## Launch via Legendary `[Recommend enabled]`
+## 通过 Legendary 启动 `[建议启用]`
 
-What it sounds like, this toggle determines whether games launch via Legendary or directly. Launching via Legendary provides access to Epic's 在线 services.
+顾名思义，此切换选项决定游戏是通过 Legendary 还是直接启动。通过 Legendary 启动可访问 Epic 的在线服务。

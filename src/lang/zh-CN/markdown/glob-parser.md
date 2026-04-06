@@ -1,5 +1,5 @@
-# 通配符 解析器
+# 通配符解析器
 
-A 通配符 based 路径 解析器 used to extract 标题 from a 文件 路径.
+一种基于通配符的路径解析器，用于从文件路径中提取标题。
 
-If your ROMs 目录 (eg. `D:\ROMS`) contains `Donkey Kong.gba`,`Super Mario.gba`, and `Sonic.gba` then the 通配符 `${标题}.gba` will find titles `Donkey Kong`, `Super Mario`, and `Sonic`.
+如果您的ROM目录（例如`D:\ROMS`）包含`Donkey Kong.gba`、`Super Mario.gba`和`Sonic.gba`，则通配符`${title}.gba`将找到标题`Donkey Kong`、`Super Mario`和`Sonic`。

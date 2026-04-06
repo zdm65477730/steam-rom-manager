@@ -35,7 +35,7 @@
 ### 当前维护者
 
 - `lontanadascienza`{.noWrap} - 更新SRM以处理背景图、海报、标志和图标。添加了异常管理器、控制器管理、平台解析器(Epic、GOG、Steam等)，以及其他许多功能。几乎在引入bug的同时就能修复它们。
-- `Zennn`{.noWrap} - 添加了分类支持、语言本地化和bug报告服务器等许多功能。[SteamGridDB](https://www.steamgriddb.com/)的负责人。
+- `Zennn`{.noWrap} - 添加了分类支持、语言本地化和bug报告服务器等功能。[SteamGridDB](https://www.steamgriddb.com/)的负责人。
 - `KenCinder`{.noWrap} - 管理和创建社区解析器预设，并在[Discord](https://discord.gg/bnSVJrz)中帮助用户设置SRM。
 
 ### 功能贡献

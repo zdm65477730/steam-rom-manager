@@ -1,10 +1,9 @@
-name: CI
+name: Release
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-    branches: [master]
+  issue_comment:
+    types: [ created ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -12,6 +11,8 @@ on:
 jobs:
   build:
     runs-on: ${{ matrix.os }}
+    container: devkitpro/devkita64:latest
+    if: contains(github.event.comment.body, '/release-action')
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macOS-latest]
@@ -42,22 +43,13 @@ jobs:
           yarn run build:dist
         env:
           SENTRY_AUTH: ${{ secrets.SENTRY_AUTH }}
-      - name: Build Linux
-        if: ${{ matrix.os == 'ubuntu-latest' }}
-        run: yarn run build:linux --publish=onTagOrDraft
-        env:
-          GH_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+
       - name: Build Windows
         if: ${{ matrix.os == 'windows-latest' }}
         run: yarn run build:win --publish=onTagOrDraft
         env:
           GH_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
 
-      - name: Build Mac
-        if: ${{ matrix.os == 'macOS-latest' }}
-        run: yarn run build:mac --publish=onTagOrDraft
-        env:
-          GH_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
       - name: Upload Artifacts Windows
         uses: actions/upload-artifact@v4.3.3
         if: ${{ matrix.os == 'windows-latest' }}
@@ -66,17 +58,3 @@ jobs:
           path: |
             release/*.exe
             release/*.msi
-      - name: Upload Artifacts Mac
-        uses: actions/upload-artifact@v4.3.3
-        if: ${{ matrix.os == 'macOS-latest' }}
-        with:
-          name: srm-build-mac
-          path: release/*.dmg
-      - name: Upload Artifacts Linux
-        uses: actions/upload-artifact@v4.3.3
-        if: ${{ matrix.os == 'ubuntu-latest' }}
-        with:
-          name: srm-build-linux
-          path: |
-            release/*.deb
-            release/*.AppImage

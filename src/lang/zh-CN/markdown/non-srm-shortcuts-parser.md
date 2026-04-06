@@ -12,7 +12,7 @@ ${...}
 
 You **must** use the username you use to **log in** into Steam **if** [use 账户 credentials](#what-does-use-账户-credentials-do) is enabled:
 
-![账户 示例](../../../assets/images/用户-账户-示例.png) {.fitImage .center}
+![账户 示例](../../../assets/images/user-account-example.png) {.fitImage .center}
 
 For 示例, this is how you specify 账户 for "Banana" and "Apple":
 
